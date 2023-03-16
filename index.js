@@ -22,13 +22,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 5001;
 
 app.get("/", async (req, res) => {
- 
-  res.send("I Am Live ....")
+  res.send("I Am Live ....");
 });
 
-app.post("/", async (req, res) => {
-  
-  const prompt = req.body.text
+app.post("/send_data", async (req, res) => {
+  const prompt = req.body.text;
 
   try {
     const responseAi = await openai.createCompletion({
@@ -42,8 +40,8 @@ app.post("/", async (req, res) => {
     });
 
     res.status(200).send({
-        bot : responseAi.data.choices[0].text
-    })
+      bot: responseAi.data.choices[0].text,
+    });
   } catch (err) {
     res.status(500).send(err.message);
   }
