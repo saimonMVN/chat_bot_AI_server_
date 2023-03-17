@@ -30,7 +30,7 @@ app.post("/send_data", async (req, res) => {
 
   try {
     const responseAi = await openai.createCompletion({
-      model: "text-davinci-003",
+      model: "gpt-3.5-turbo",
       prompt: `${prompt}`,
       temperature: 0.7,
       max_tokens: 256,
@@ -47,17 +47,7 @@ app.post("/send_data", async (req, res) => {
   }
 });
 
-
-
-
-
-
 // chat gpt custom model
-
-
-
-
-
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
