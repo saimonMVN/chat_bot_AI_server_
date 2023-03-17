@@ -46,6 +46,19 @@ app.post("/send_data", async (req, res) => {
     res.status(500).send(err.message);
   }
 });
+
+
+
+
+
+
+// chat gpt custom model
+
+
+
+
+
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
