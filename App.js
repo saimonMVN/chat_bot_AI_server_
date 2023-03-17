@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
   res.send("I Am Live ....");
 });
 
-app.post("/send_data", async (req, res) => {
+app.post("/", async (req, res) => {
   const prompt = req.body.text;
 
   try {
